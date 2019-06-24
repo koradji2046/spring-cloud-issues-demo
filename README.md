@@ -39,4 +39,5 @@ java.lang.IllegalStateException: org.springframework.context.annotation.Annotati
 ```
 
 https://github.com/spring-projects/spring-cloud/issues/39
+
 https://github.com/spring-cloud/spring-cloud-bus/issues/201
