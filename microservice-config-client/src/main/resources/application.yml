@@ -1,0 +1,25 @@
+server:
+  port: 8041
+
+profile: dev
+
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+  restart:
+    enabled: true
+    sensitive: false
+
+security.basic.enabled: false
+management:
+  security.enabled: false
+  context-path: /actuator
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: qzdatasoft
+    password: 123456
+    virtual-host: /
