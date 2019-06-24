@@ -1,0 +1,47 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: microservice-config-server
+  profiles:
+    active: native
+
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+  restart:
+    enabled: true
+    sensitive: false
+
+security.basic.enabled: false
+management:
+  security.enabled: false
+  context-path: /actuator
+  
+---
+spring:
+  profiles: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: D:/work/spring-cloud-microservice-study/config-repo
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: qzdatasoft
+    password: 123456
+    virtual-host: /
+
+---
+spring:
+  profiles: online
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/eacdy/spring-cloud-study/     # 配置git仓库的地址
+          search-paths: config-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username:                                             # git仓库的账号
+          password:                                             # git仓库的密码
