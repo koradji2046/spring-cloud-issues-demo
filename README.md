@@ -37,3 +37,5 @@ java.lang.IllegalStateException: org.springframework.context.annotation.Annotati
 
 2019-06-25 00:44:21.222  INFO 5748 --- [       Thread-8] o.s.c.context.restart.RestartEndpoint    : Could not restart: org.springframework.context.annotation.AnnotationConfigApplicationContext@1b9e1916 has been closed already
 ```
+
+https://github.com/spring-projects/spring-cloud/issues/39
