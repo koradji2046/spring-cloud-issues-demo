@@ -41,3 +41,13 @@ java.lang.IllegalStateException: org.springframework.context.annotation.Annotati
 https://github.com/spring-projects/spring-cloud/issues/39
 
 https://github.com/spring-cloud/spring-cloud-bus/issues/201
+
+暂行解决方案
+===========
+因为我们当前使用的Edware.SR4,对应的是相应的spring-cloud-context-1.3.4.RELEASE
+取spring-cloud-contextv1.3.2 \src\main\java\org\springframework\cloud\context\restart\RestartEndpoint.java
+覆盖spring-cloud-contextv1.3.4\src\main\java\org\springframework\cloud\context\restart\RestartEndpoint.java
+编译为class替换到repository\org\springframework\cloud\spring-cloud-context\1.3.4.RELEASE\spring-cloud-context-1.3.4.RELEASE.jar
+直到spring官方fiexed该bug为之。
+
+风险：所有项目需要进行权回归测试。
